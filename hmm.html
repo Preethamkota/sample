@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mydata">
+ </div>
+    <div id="myformdiv">
+        <h3>Enter student marks andkdhfure</h3>
+        <form action="" id="myform" method="post">
+            <label>Name:</label>
+            <input type="text" name="" id="sname">
+            <br><br>
+            <label>subject1 Marks:</label>
+            <input type="text" id="sub1name" placeholder="sub1">
+            <input type="number" id="marks1"><br><br>
+            <label>subject2 Marks:</label>
+            <input type="text" id="sub2name" placeholder="sub2">
+            <input type="number" id="marks2"><br><br>
+            <label>subject3 Marks:</label>
+            <input type="text" id="sub3name" placeholder="sub3">
+            <input type="number" id="marks3"><br><br>
+            <input type="button" onclick="myFunction()" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function myFunction(){
+            document.getElementById('myformdiv').style.display='none';
+            let myInfo=`
+            <div class='sdetails'>
+     <h3> Student Details and Marks</h3>
+      <table class=table-bordered table-primary>
+      <tr>
+       <td class="bg-primary"> Name</td> <td>${ document.getElementById('sname').value}</td>
+       </tr>
+       <tr>
+          <td > ${ document.getElementById('sub1name').value} Marks </td><td>${ document.getElementById('marks1').value}.</td>
+       </tr>
+       <tr> <td> ${ document.getElementById('sub2name').value} Marks </td><td> ${ document.getElementById('marks2').value}</td>
+       </tr>
+       <tr> <td> ${ document.getElementById('sub3name').value} Marks </td><td> ${ document.getElementById('marks3').value}</td>
+       </tr>
+       </tr>
+      </table>
+      </div>
+            `
+            document.getElementById('mydata').innerHTML=myInfo;
+        }
+    </script>
+</body>
+
+</html>
